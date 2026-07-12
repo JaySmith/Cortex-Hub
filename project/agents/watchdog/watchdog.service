@@ -1,0 +1,26 @@
+[Unit]
+Description=Cortex WatchdogAgent — health checks, metrics, and alerts
+After=network.target hub-mcp.service
+Wants=hub-mcp.service
+
+[Service]
+Type=simple
+User=watchdog
+WorkingDirectory=/opt/cortex/agents/watchdog
+ExecStart=/usr/bin/node /opt/cortex/agents/watchdog/agent.mjs
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+Environment=NODE_ENV=production
+Environment=HUB_HOST=localhost
+Environment=HUB_PORT=4096
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+PrivateTmp=true
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target

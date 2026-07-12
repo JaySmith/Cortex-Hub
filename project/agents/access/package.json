@@ -1,0 +1,8 @@
+{
+  "name": "access-agent",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@cortex/agent-sdk": "file:../../packages/agent-sdk"
+  }
+}

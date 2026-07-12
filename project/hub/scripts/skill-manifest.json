@@ -1,0 +1,128 @@
+[
+  {
+    "role": "hub",
+    "description": "Storage + MCP hub server",
+    "required": [
+      { "name": "node", "version": ">=18" }
+    ],
+    "optional": [
+      { "name": "npm", "version": ">=9" },
+      { "name": "git", "version": ">=2" }
+    ]
+  },
+  {
+    "role": "compute",
+    "description": "Primary compute — heavy lifting, coding, LLM inference",
+    "required": [
+      { "name": "node", "version": ">=18" },
+      { "name": "npm", "version": ">=9" },
+      { "name": "git", "version": ">=2" }
+    ],
+    "optional": [
+      { "name": "python", "version": ">=3.8" },
+      { "name": "docker", "version": ">=20" },
+      { "name": "ollama", "version": ">=0.1" },
+      { "name": "python3", "version": ">=3.8" },
+      { "name": "go", "version": ">=1.18" },
+      { "name": "rustc", "version": ">=1.60" },
+      { "name": "cargo", "version": ">=1.60" },
+      { "name": "java", "version": ">=11" },
+      { "name": "tsx", "version": ">=3" },
+      { "name": "npx", "version": ">=9" }
+    ]
+  },
+  {
+    "role": "backup",
+    "description": "Backups/archive — schedules, rotations, disaster recovery",
+    "required": [
+      { "name": "node", "version": ">=18" }
+    ],
+    "optional": [
+      { "name": "python", "version": ">=3.8" },
+      { "name": "git", "version": ">=2" },
+      { "name": "docker", "version": ">=20" },
+      { "name": "curl", "version": ">=7" }
+    ]
+  },
+  {
+    "role": "watchdog",
+    "description": "Monitoring — metrics, logs, alerts, health checks",
+    "required": [
+      { "name": "node", "version": ">=18" }
+    ],
+    "optional": [
+      { "name": "curl", "version": ">=7" },
+      { "name": "ping", "version": "*" }
+    ]
+  },
+  {
+    "role": "security",
+    "description": "Vulnerability scanning, CVE monitoring, compliance",
+    "required": [
+      { "name": "node", "version": ">=18" }
+    ],
+    "optional": [
+      { "name": "python", "version": ">=3.8" },
+      { "name": "git", "version": ">=2" },
+      { "name": "docker", "version": ">=20" },
+      { "name": "curl", "version": ">=7" }
+    ]
+  },
+  {
+    "role": "release",
+    "description": "CI/CD orchestration, canary analysis, rollbacks",
+    "required": [
+      { "name": "node", "version": ">=18" }
+    ],
+    "optional": [
+      { "name": "git", "version": ">=2" },
+      { "name": "docker", "version": ">=20" },
+      { "name": "curl", "version": ">=7" }
+    ]
+  },
+  {
+    "role": "oncall",
+    "description": "Incident response, escalations, postmortems",
+    "required": [
+      { "name": "node", "version": ">=18" }
+    ],
+    "optional": [
+      { "name": "curl", "version": ">=7" },
+      { "name": "git", "version": ">=2" }
+    ]
+  },
+  {
+    "role": "finops",
+    "description": "Cloud cost tracking, budgets, right-sizing",
+    "required": [
+      { "name": "node", "version": ">=18" }
+    ],
+    "optional": [
+      { "name": "curl", "version": ">=7" },
+      { "name": "python", "version": ">=3.8" }
+    ]
+  },
+  {
+    "role": "access",
+    "description": "Access management, keys, certs, audit logs",
+    "required": [
+      { "name": "node", "version": ">=18" }
+    ],
+    "optional": [
+      { "name": "git", "version": ">=2" },
+      { "name": "openssl", "version": "*" },
+      { "name": "curl", "version": ">=7" }
+    ]
+  },
+  {
+    "role": "doc",
+    "description": "Auto-generated documentation from hive memory",
+    "required": [
+      { "name": "node", "version": ">=18" }
+    ],
+    "optional": [
+      { "name": "npm", "version": ">=9" },
+      { "name": "git", "version": ">=2" }
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[Unit]
+Description=Cortex AccessAgent — SSH key rotation, cert monitoring, access audit
+After=network.target hub-mcp.service
+Wants=hub-mcp.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/cortex/agents/access
+ExecStart=/usr/bin/node /opt/cortex/agents/access/agent.mjs
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+Environment=NODE_ENV=production
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=full
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

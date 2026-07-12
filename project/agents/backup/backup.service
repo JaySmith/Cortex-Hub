@@ -1,0 +1,23 @@
+[Unit]
+Description=Cortex BackupAgent — scheduled backups, rotation, and recovery
+After=network.target hub-mcp.service
+Wants=hub-mcp.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/cortex/agents/backup
+ExecStart=/usr/bin/node /opt/cortex/agents/backup/agent.mjs
+Restart=on-failure
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+Environment=NODE_ENV=production
+
+# Hardening
+NoNewPrivileges=true
+ProtectSystem=full
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

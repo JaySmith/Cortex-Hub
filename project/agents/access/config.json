@@ -1,0 +1,20 @@
+{
+  "agentName": "access",
+  "hostname": "access.local",
+  "hubHost": "localhost",
+  "hubPort": 4096,
+  "checkIntervalMs": 86400000,
+  "heartbeatIntervalMs": 30000,
+  "sshKeyPaths": [
+    "/etc/ssh/ssh_host_rsa_key",
+    "/etc/ssh/ssh_host_ed25519_key",
+    "/home/*/.ssh/id_rsa",
+    "/home/*/.ssh/id_ed25519"
+  ],
+  "certPaths": [
+    "/etc/ssl/certs",
+    "/etc/letsencrypt/live"
+  ],
+  "keyRotationDays": 90,
+  "certRenewalDays": 30
+}

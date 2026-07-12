@@ -1,0 +1,22 @@
+[Unit]
+Description=Hub MCP Server — Cortex Agent Federation Hub
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/cortex/hub/mcp-server
+ExecStart=/usr/bin/node /opt/cortex/hub/mcp-server/dist/index.js
+Restart=on-failure
+RestartSec=5
+StandardOutput=journal
+StandardError=journal
+Environment=NODE_ENV=production
+Environment=HUB_PORT=4096
+
+# Hardening
+NoNewPrivileges=true
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

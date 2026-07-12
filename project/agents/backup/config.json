@@ -1,0 +1,35 @@
+{
+  "agentName": "backup",
+  "hostname": "backup.local",
+  "hubHost": "localhost",
+  "hubPort": 4096,
+  "checkIntervalMs": 3600000,
+  "heartbeatIntervalMs": 30000,
+  "backups": [
+    {
+      "name": "hub-data",
+      "type": "directory",
+      "source": "/opt/cortex/hub/mcp-server/data",
+      "destination": "/var/backups/cortex/hub",
+      "schedule": "daily",
+      "retention": {
+        "daily": 7,
+        "weekly": 4,
+        "monthly": 3
+      },
+      "compress": true
+    },
+    {
+      "name": "agent-configs",
+      "type": "directory",
+      "source": "/opt/cortex/agents",
+      "destination": "/var/backups/cortex/agents",
+      "schedule": "daily",
+      "retention": {
+        "daily": 14,
+        "weekly": 8
+      },
+      "compress": true
+    }
+  ]
+}

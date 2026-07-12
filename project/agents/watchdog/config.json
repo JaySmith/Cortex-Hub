@@ -1,0 +1,50 @@
+{
+  "agentName": "watchdog",
+  "hostname": "watchdog.local",
+  "hubHost": "localhost",
+  "hubPort": 4096,
+  "checkIntervalMs": 60000,
+  "heartbeatIntervalMs": 30000,
+  "alertCooldownMs": 300000,
+  "targets": [
+    {
+      "name": "hub-mcp",
+      "type": "http",
+      "endpoint": "http://localhost:4096/mcp",
+      "expectedStatus": 405,
+      "timeoutMs": 5000,
+      "tags": ["hub", "critical"],
+      "severity": "critical"
+    },
+    {
+      "name": "hub-tcp",
+      "type": "tcp",
+      "host": "localhost",
+      "port": 4096,
+      "timeoutMs": 3000,
+      "tags": ["hub", "critical"],
+      "severity": "critical"
+    },
+    {
+      "name": "local-node",
+      "type": "process",
+      "process": "node",
+      "tags": ["system", "runtime"],
+      "severity": "warning"
+    }
+  ],
+  "alertRules": [
+    {
+      "name": "critical-down",
+      "condition": "status == 'down' && severity == 'critical'",
+      "notify": ["oncall"],
+      "cooldownMs": 300000
+    },
+    {
+      "name": "warning-down",
+      "condition": "status == 'down' && severity == 'warning'",
+      "notify": [],
+      "cooldownMs": 600000
+    }
+  ]
+}
