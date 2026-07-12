@@ -283,6 +283,10 @@ node agents/access/agent.mjs
 
 ---
 
+## Related
+
+- **[Cortex-AI](https://github.com/JaySmith/Cortex-AI)** — Vault, memory, and MCP server for structured knowledge. Distill, search, and query your personal Obsidian knowledge base. Integrates with Cortex-Hub for multi-machine vault sync.
+
 ## License
 
 MIT
