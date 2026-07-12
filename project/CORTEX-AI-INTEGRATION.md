@@ -4,6 +4,12 @@ cortex-ai optionally connects to cortex-hub to share vault notes across
 machines. This doc describes the hub-side perspective. For the full plan,
 see `docs/HIVE-INTEGRATION.md` in the cortex-ai repo.
 
+## Data Model
+
+**Canonical source:** `docs/VAULT-NOTE-SCHEMA.md` in the cortex-ai repo.
+Both repos reference that document for field definitions, types, and the
+conflict resolution rule (newest `updated` timestamp wins).
+
 ## How it works
 
 cortex-ai's vault distiller pushes notes to the hub as `vault/{machine_id}/{id}`
