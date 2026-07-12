@@ -1,6 +1,6 @@
-# Cortex
+# Cortex-Hub
 
-**Multi-agent orchestration framework.** Specialized AI agents communicate through a central Hub — sharing memory, passing messages, and coordinating tasks like monitoring, backups, access management, and incident response without human intervention.
+**Multi-agent coordination layer.** Specialized AI agents communicate through a central Hub — sharing memory, passing messages, and coordinating tasks like monitoring, backups, access management, and incident response without human intervention.
 
 Cortex runs two classes of agent:
 
@@ -56,8 +56,8 @@ Both share the same Hub, same memory store, same message queue — the integrati
 
 ```bash
 # Prerequisites: Node.js >= 18
-git clone <repo-url> cortex
-cd cortex
+git clone https://github.com/JaySmith/Cortex-Hub.git cortex-hub
+cd cortex-hub
 
 # 1. Start the Hub
 cd hub/mcp-server
@@ -220,7 +220,7 @@ access/audit/<date>     → AccessAgent audit logs
 ## Project Layout
 
 ```
-cortex/
+Cortex-Hub/
 ├── README.md
 ├── USER_GUIDE.md
 ├── CORTEX-2.0.md
